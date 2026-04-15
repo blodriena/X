@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>X</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">
+    <span class="nav-logo-dot"></span>CONSTRUCT
+  </a>
+
+  <div class="nav-links">
+
+    <div class="nav-item" id="ni-product">
+      <button class="nav-btn" onclick="toggleNav('ni-product')">
+        Product
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 4l4 4 4-4"/></svg>
+      </button>
+      <div class="dropdown">
+        <div class="dropdown-item">
+          <div class="dropdown-icon">⚡</div>
+          <div>
+            <div class="dropdown-label">Components</div>
+            <div class="dropdown-sub">Reusable UI blocks</div>
+          </div>
+        </div>
+        <div class="dropdown-item">
+          <div class="dropdown-icon">🎨</div>
+          <div>
+            <div class="dropdown-label">Design Tokens</div>
+            <div class="dropdown-sub">Colors, type, spacing</div>
+          </div>
+        </div>
+        <div class="dropdown-item">
+          <div class="dropdown-icon">🧩</div>
+          <div>
+            <div class="dropdown-label">Templates</div>
+            <div class="dropdown-sub">Ready-to-ship layouts</div>
+          </div>
+        </div>
+        <div class="dropdown-divider"></div>
+        <div class="dropdown-item">
+          <div class="dropdown-icon">📦</div>
+          <div>
+            <div class="dropdown-label">Changelog</div>
+            <div class="dropdown-sub">What's new</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-item" id="ni-dev">
+      <button class="nav-btn" onclick="toggleNav('ni-dev')">
+        Developers
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 4l4 4 4-4"/></svg>
+      </button>
+      <div class="dropdown">
+        <div class="dropdown-item">
+          <div class="dropdown-icon">📄</div>
+          <div>
+            <div class="dropdown-label">Documentation</div>
+            <div class="dropdown-sub">Guides & reference</div>
+          </div>
+        </div>
+        <div class="dropdown-item">
+          <div class="dropdown-icon">⚙️</div>
+          <div>
+            <div class="dropdown-label">API Reference</div>
+            <div class="dropdown-sub">Endpoints & schemas</div>
+          </div>
+        </div>
+        <div class="dropdown-item">
+          <div class="dropdown-icon">🔗</div>
+          <div>
+            <div class="dropdown-label">Integrations</div>
+            <div class="dropdown-sub">Connect your stack</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-item" id="ni-company">
+      <button class="nav-btn" onclick="toggleNav('ni-company')">
+        Company
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 4l4 4 4-4"/></svg>
+      </button>
+      <div class="dropdown" style="left: auto; right: 0;">
+        <div class="dropdown-item">
+          <div class="dropdown-icon">👥</div>
+          <div>
+            <div class="dropdown-label">About us</div>
+            <div class="dropdown-sub">Story & mission</div>
+          </div>
+        </div>
+        <div class="dropdown-item">
+          <div class="dropdown-icon">💼</div>
+          <div>
+            <div class="dropdown-label">Careers</div>
+            <div class="dropdown-sub">Join the team</div>
+          </div>
+        </div>
+        <div class="dropdown-item">
+          <div class="dropdown-icon">📰</div>
+          <div>
+            <div class="dropdown-label">Blog</div>
+            <div class="dropdown-sub">Thoughts & releases</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="nav-btn" style="cursor:pointer;">Pricing</button>
+    <a href="#faq" class="nav-btn" style="text-decoration:none; display:flex; align-items:center;">FAQ</a>
+
+  </div>
+
+  <div class="nav-right">
+    <button class="nav-cta">Get started →</button>
+  </div>
+
+  <!-- burger -->
+  <button class="burger" id="burger" onclick="toggleBurger()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+
+  <div class="mobile-section" id="ms-product">
+    <button class="mobile-nav-btn" onclick="toggleMobile('ms-product')">
+      Product
+      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 4l4 4 4-4"/></svg>
+    </button>
+    <div class="mobile-dropdown">
+      <div class="mobile-dropdown-item">
+        <div class="mobile-dropdown-icon">⚡</div>
+        <div>
+          <div class="mobile-dropdown-label">Components</div>
+          <div class="mobile-dropdown-sub">Reusable UI blocks</div>
+        </div>
+      </div>
+      <div class="mobile-dropdown-item">
+        <div class="mobile-dropdown-icon">🎨</div>
+        <div>
+          <div class="mobile-dropdown-label">Design Tokens</div>
+          <div class="mobile-dropdown-sub">Colors, type, spacing</div>
+        </div>
+      </div>
+      <div class="mobile-dropdown-item">
+        <div class="mobile-dropdown-icon">🧩</div>
+        <div>
+          <div class="mobile-dropdown-label">Templates</div>
+          <div class="mobile-dropdown-sub">Ready-to-ship layouts</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile-section" id="ms-dev">
+    <button class="mobile-nav-btn" onclick="toggleMobile('ms-dev')">
+      Developers
+      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 4l4 4 4-4"/></svg>
+    </button>
+    <div class="mobile-dropdown">
+      <div class="mobile-dropdown-item">
+        <div class="mobile-dropdown-icon">📄</div>
+        <div>
+          <div class="mobile-dropdown-label">Documentation</div>
+          <div class="mobile-dropdown-sub">Guides & reference</div>
+        </div>
+      </div>
+      <div class="mobile-dropdown-item">
+        <div class="mobile-dropdown-icon">⚙️</div>
+        <div>
+          <div class="mobile-dropdown-label">API Reference</div>
+          <div class="mobile-dropdown-sub">Endpoints & schemas</div>
+        </div>
+      </div>
+      <div class="mobile-dropdown-item">
+        <div class="mobile-dropdown-icon">🔗</div>
+        <div>
+          <div class="mobile-dropdown-label">Integrations</div>
+          <div class="mobile-dropdown-sub">Connect your stack</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile-section" id="ms-company">
+    <button class="mobile-nav-btn" onclick="toggleMobile('ms-company')">
+      Company
+      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 4l4 4 4-4"/></svg>
+    </button>
+    <div class="mobile-dropdown">
+      <div class="mobile-dropdown-item">
+        <div class="mobile-dropdown-icon">👥</div>
+        <div>
+          <div class="mobile-dropdown-label">About us</div>
+        </div>
+      </div>
+      <div class="mobile-dropdown-item">
+        <div class="mobile-dropdown-icon">💼</div>
+        <div>
+          <div class="mobile-dropdown-label">Careers</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile-section">
+    <a href="#" class="mobile-simple-link">Pricing</a>
+  </div>
+
+  <div class="mobile-section">
+    <a href="#faq" class="mobile-simple-link" onclick="closeBurger()">FAQ</a>
+  </div>
+
+  <button class="mobile-cta">Get started →</button>
+</div>
+
+<div class="page">
+
+  <section class="hero">
+    <div class="hero-eyebrow">Design system — v2.4</div>
+    <h1 class="hero-title">Build <em>faster.</em><br>Ship smarter.</h1>
+    <p class="hero-sub">A component library for teams who care about every pixel and every millisecond.</p>
+  </section>
+
+  <section class="faq-section" id="faq">
+    <div class="faq-eyebrow">Got questions</div>
+    <h2 class="faq-title">Frequently<br>asked.</h2>
+
+    <div class="faq-list">
+
+      <div class="faq-item" id="faq-1">
+        <button class="faq-question" onclick="toggleFaq('faq-1')">
+          What exactly is included in the component library?
+          <div class="faq-icon">
+            <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 1v8M1 5h8"/></svg>
+          </div>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">
+            <p class="faq-answer">Everything you need to ship a production-grade interface. <strong>80+ components</strong>, dark-mode ready, fully accessible, and typed with TypeScript. You get navbars like this one, accordions like this FAQ, data tables, modals, toast notifications, form elements, and a full design token system to wire it all together.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" id="faq-2">
+        <button class="faq-question" onclick="toggleFaq('faq-2')">
+          Can I use this in a commercial project?
+          <div class="faq-icon">
+            <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 1v8M1 5h8"/></svg>
+          </div>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">
+            <p class="faq-answer">Yes. <strong>No attribution required</strong>, no royalty fees. Buy once, use it on unlimited projects — personal, client work, SaaS products, whatever. The license is yours forever, including future updates for the version you purchased.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" id="faq-3">
+        <button class="faq-question" onclick="toggleFaq('faq-3')">
+          Which frameworks are supported?
+          <div class="faq-icon">
+            <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 1v8M1 5h8"/></svg>
+          </div>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">
+            <p class="faq-answer">The core library ships as <strong>vanilla HTML/CSS/JS</strong> — zero dependencies, works everywhere. React and Vue wrappers are included in the Pro tier. A Next.js starter template is also available to get you from zero to deployed in under five minutes.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" id="faq-4">
+        <button class="faq-question" onclick="toggleFaq('faq-4')">
+          How do updates and versioning work?
+          <div class="faq-icon">
+            <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 1v8M1 5h8"/></svg>
+          </div>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">
+            <p class="faq-answer">We follow <strong>semantic versioning</strong>. Minor and patch updates ship automatically via npm or the CDN — no breaking changes, ever, within a major version. When a new major version drops, you keep your current license and can upgrade at a discounted rate.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" id="faq-5">
+        <button class="faq-question" onclick="toggleFaq('faq-5')">
+          Is there a free tier to try before buying?
+          <div class="faq-icon">
+            <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 1v8M1 5h8"/></svg>
+          </div>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">
+            <p class="faq-answer">Absolutely. The <strong>Starter kit</strong> (12 core components) is free forever with no sign-up required. Just download and go. If you like what you see, the Pro license unlocks everything — including priority support and Figma source files.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" id="faq-6">
+        <button class="faq-question" onclick="toggleFaq('faq-6')">
+          What kind of support do you offer?
+          <div class="faq-icon">
+            <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 1v8M1 5h8"/></svg>
+          </div>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">
+            <p class="faq-answer">Community support via Discord is free for all users. Pro license holders get <strong>email support with a 24-hour response guarantee</strong> on business days. Enterprise plans include dedicated Slack access, onboarding calls, and SLA-backed response times.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
