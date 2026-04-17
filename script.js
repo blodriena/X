@@ -9,9 +9,6 @@
     if (!e.target.closest('.nav-item')) {
       document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('open'));
     }
-
-
-    
   });
   function toggleBurger() {
     const burger = document.getElementById('burger');
